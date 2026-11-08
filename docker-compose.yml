@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: gestao-funcionarios
+    ports:
+      - "8080:80"
+    # Volumes para desenvolvimento: edite os arquivos e basta atualizar o navegador
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./funcionario.js:/usr/share/nginx/html/funcionario.js:ro
+      - ./app.js:/usr/share/nginx/html/app.js:ro
